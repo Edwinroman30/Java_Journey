@@ -1,4 +1,4 @@
-public class TV {
+public class TV{
     
     /* 
     Requirements: 
@@ -22,14 +22,17 @@ public class TV {
     private boolean smartTV;
     private int inches;
     private boolean status;
+    private int volumen;
 
     public TV(String pMarca, String pModel, boolean pSmartTV, int pInches){
 
-        this.model = pMarca;
+        this.marca = pMarca;
         this.model = pModel;
         this.smartTV = pSmartTV;
         this.inches = pInches;
         this.status = false;
+        this.volumen = 0;
+
         //Validations:
 
         if(pInches < 14){
@@ -44,19 +47,46 @@ public class TV {
         this.smartTV = false;
         this.inches = 0;
         this.status = false;
+        this.volumen = 0;
     }
 
     public void turnOn(){
         this.status = true;
+        System.out.println("Hola soy " +this.marca + ", y me acaban de encender.");
+
     }
 
     public void turnOff(){
         this.status = false;
+        System.out.println("Hola soy " +this.marca + ", y me acaban de apagar.");
+    }
+
+    public void upVolum(){
+        
+        if(this.volumen < 100){
+            this.volumen +=10;
+        }else{
+            this.volumen = 100;
+        }
+
+        System.out.println("Hola soy " +this.marca + ", y me acaban de aumentar el volumen.");
+
+    }
+
+    public void downVolum(){
+        if(this.volumen >= 100){
+            this.volumen -=10;
+        }else{
+            this.volumen = 0;
+        }
+
+        System.out.println("Hola soy " +this.marca + ", y me acaban de disminuir el volumen.");
+
     }
 
     public String infoTV(){
 
-        return "Brand: "+this.marca+ "\nModel: "+ this.model + "\n Is smart TV? "+this.smartTV + "\n Inches: "+this.inches +"\n Status: "+this.status;
+        return "Brand: "+ this.marca + "\nModel: "+ this.model + "\nIs smart TV? "+this.smartTV + "\nInches: "+this.inches +"\nStatus: "+this.status + "\nVolume: " + this.volumen;
     
     }
 
