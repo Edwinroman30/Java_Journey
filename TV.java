@@ -17,12 +17,12 @@ public class TV{
 
     */
 
-    private String marca;
-    private String model;
-    private boolean smartTV;
-    private int inches;
-    private boolean status;
-    private int volumen;
+    public String marca;
+    public String model;
+    public boolean smartTV;
+    public int inches;
+    public boolean status;
+    public int volumen;
 
     public TV(String pMarca, String pModel, boolean pSmartTV, int pInches){
 
@@ -51,43 +51,23 @@ public class TV{
     }
 
     public void turnOn(){
-        this.status = true;
         System.out.println("Hola soy " +this.marca + ", y me acaban de encender.");
-
     }
 
     public void turnOff(){
-        this.status = false;
         System.out.println("Hola soy " +this.marca + ", y me acaban de apagar.");
     }
 
     public void upVolum(){
-        
-        if(this.volumen < 100){
-            this.volumen +=10;
-        }else{
-            this.volumen = 100;
-        }
-
         System.out.println("Hola soy " +this.marca + ", y me acaban de aumentar el volumen.");
-
     }
 
     public void downVolum(){
-        if(this.volumen >= 100){
-            this.volumen -=10;
-        }else{
-            this.volumen = 0;
-        }
-
         System.out.println("Hola soy " +this.marca + ", y me acaban de disminuir el volumen.");
-
     }
 
     public String infoTV(){
-
         return "Brand: "+ this.marca + "\nModel: "+ this.model + "\nIs smart TV? "+this.smartTV + "\nInches: "+this.inches +"\nStatus: "+this.status + "\nVolume: " + this.volumen;
-    
     }
 
 
