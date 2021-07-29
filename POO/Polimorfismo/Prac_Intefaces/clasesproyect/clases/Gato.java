@@ -3,12 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package clasesproyect;
+package POO.Polimorfismo.Prac_Intefaces.clasesproyect.clases;
 
 /**
  *
  * @author Edmain
  */
-public class Perro {
+public class Gato extends Animal{
     
+    @Override
+    public void hablar() {
+        System.out.println("Miau miau miau!");
+    }
+
 }
